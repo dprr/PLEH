@@ -71,18 +71,18 @@ public class BulletinBoardActivity extends AppCompatActivity {
             }
         };
 
-        wishList.add(new Wish("Sofa", "Beer", "help me", "Yoni", "medicine", 0, 1));
-        wishList.add(new Wish("Translation", "Cookies", "help me", "Felber", "medicine", 1, 2));
-        wishList.add(new Wish("Cart", "Drugs", "help me", "Shahar", "medicine", 2, 3));
-        wishList.add(new Wish("Work", "Cookies", "help me", "Ohad", "medicine", 3, 4));
-        wishList.add(new Wish("Sofa", "Beer", "help me", "Yoni", "medicine", 4, 5));
-        wishList.add(new Wish("Translation", "Cookies", "help me", "Felber", "medicine", 5, 6));
-        wishList.add(new Wish("Cart", "Drugs", "help me", "Shahar", "medicine", 6, 7));
-        wishList.add(new Wish("Work", "Cookies", "help me", "Ohad", "medicine", 7, 8));
-        wishList.add(new Wish("Sofa", "Beer", "help me", "Yoni", "medicine", 8, 9));
-        wishList.add(new Wish("Translation", "Cookies", "help me", "Felber", "medicine", 9, 10));
-        wishList.add(new Wish("Cart", "Drugs", "help me", "Shahar", "medicine", 11, 12));
-        wishList.add(new Wish("Work", "Cookies", "help me", "Ohad", "medicine", 12, 13));
+        wishList.add(new Wish("Sofa", "Beer", "help me", "Yoni", WishCategory.ITEMS, 0, 1));
+        wishList.add(new Wish("Translation", "Cookies", "help me", "Felber", WishCategory.ITEMS, 1, 2));
+        wishList.add(new Wish("Cart", "Drugs", "help me", "Shahar", WishCategory.ITEMS, 2, 3));
+        wishList.add(new Wish("Work", "Cookies", "help me", "Ohad", WishCategory.ITEMS, 3, 4));
+        wishList.add(new Wish("Sofa", "Beer", "help me", "Yoni", WishCategory.ITEMS, 4, 5));
+        wishList.add(new Wish("Translation", "Cookies", "help me", "Felber", WishCategory.ITEMS, 5, 6));
+        wishList.add(new Wish("Cart", "Drugs", "help me", "Shahar", WishCategory.ITEMS, 6, 7));
+        wishList.add(new Wish("Work", "Cookies", "help me", "Ohad", WishCategory.ITEMS, 7, 8));
+        wishList.add(new Wish("Sofa", "Beer", "help me", "Yoni", WishCategory.ITEMS, 8, 9));
+        wishList.add(new Wish("Translation", "Cookies", "help me", "Felber", WishCategory.ITEMS, 9, 10));
+        wishList.add(new Wish("Cart", "Drugs", "help me", "Shahar", WishCategory.ITEMS, 11, 12));
+        wishList.add(new Wish("Work", "Cookies", "help me", "Ohad", WishCategory.ITEMS, 12, 13));
         wishListRecyclerView.setAdapter(new BulletinBoardAdapter(wishList, buttonsListener));
     }
 }

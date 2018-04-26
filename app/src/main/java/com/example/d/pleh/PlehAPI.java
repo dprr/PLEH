@@ -10,6 +10,9 @@ public interface PlehAPI {
     @GET("user/all")
     Call<List<User>> getUser();
 
+    @GET("user/email")
+    Call<User> getUserbyEmail(String email);
+
     @POST("user/create")
     Call<Long> addUser(@Body User user);
 
@@ -18,5 +21,4 @@ public interface PlehAPI {
 
     @POST("wish/create")
     Call<Long> addWish(@Body User user);
-//    //todo same for wish and etc.
 }

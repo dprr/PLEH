@@ -6,25 +6,34 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 public class Wish {
-    private String title, reward, description, author, cat;
+    private String title, reward, description, author;
+    private WishCategory wishCategory;
     private HashSet<Integer> confirmed, applying;
     private long id, authorId;
     private ImageView wishImage;
     private WishStatus wishStatus;
 
 
-    public Wish(String title, String reward, String description, String author, String cat,
-                long authorId, long id) {
+    public Wish(String title, String reward, String description, String author,
+                WishCategory wishCategory, long authorId, long id) {
         this.title = title;
         this.reward = reward;
         this.description = description;
         this.author = author;
-        this.cat = cat;
+        this.wishCategory = wishCategory;
         this.authorId = authorId;
         this.id = id;
         confirmed = new HashSet<Integer>();
         applying = new HashSet<Integer>();
 
+    }
+
+    public WishCategory getWishCategory() {
+        return wishCategory;
+    }
+
+    public void setWishCategory(WishCategory wishCategory) {
+        this.wishCategory = wishCategory;
     }
 
     public long getId() {
