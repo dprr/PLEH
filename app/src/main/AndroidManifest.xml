@@ -26,6 +26,18 @@
         </activity>
 
         <activity
+            android:name=".PageWishDescription"
+            android:launchMode="singleTop"
+            android:parentActivityName=".BulletinBoardActivity"
+            android:screenOrientation="portrait">
+
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
+
+        <activity
             android:name=".WishRequestActivity"
             android:launchMode="singleTop"
             android:parentActivityName=".BulletinBoardActivity"

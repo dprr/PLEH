@@ -40,8 +40,8 @@ public class BulletinBoardActivity extends AppCompatActivity {
         BulletinBoardAdapter.OnItemClickListener buttonsListener = new BulletinBoardAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Wish vetClinic) {
-//                Intent intent = new Intent(BulletinBoardActivity.this, PageWishDescription.class);
-//                startActivity(intent);
+                Intent intent = new Intent(BulletinBoardActivity.this, PageWishDescription.class);
+                startActivity(intent);
             }
         };
 
