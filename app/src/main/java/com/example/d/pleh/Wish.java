@@ -1,17 +1,34 @@
 package com.example.d.pleh;
 
+import android.widget.ImageView;
+
+import java.util.ArrayList;
 import java.util.HashSet;
 
 public class Wish {
-    private String title, reward, description, author;
+    private String title, reward, description, author, cat;
     private HashSet<Integer> confirmed, applying;
     private long id; //todo add id
+    private ImageView wishImage;
 
-    public Wish(String title, String reward, String description, String author) {
+
+    public Wish(String title, String reward, String description, String author, String cat) {
         this.title = title;
         this.reward = reward;
         this.description = description;
         this.author = author;
+        this.cat = cat;
+        confirmed = new HashSet<>();
+        applying = new HashSet<>();
+
+    }
+
+    public void setConfirmed(HashSet<Integer> confirmed) {
+        this.confirmed = confirmed;
+    }
+
+    public void setApplying(HashSet<Integer> applying) {
+        this.applying = applying;
     }
 
     public String getTitle() {
@@ -64,4 +81,12 @@ public class Wish {
     }
 
     public long getID() { return id;}
+
+    public ImageView getWishImage() {
+        return wishImage;
+    }
+
+    public void setWishImage(ImageView wishImage) {
+        this.wishImage = wishImage;
+    }
 }
