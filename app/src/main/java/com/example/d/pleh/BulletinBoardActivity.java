@@ -1,5 +1,6 @@
 package com.example.d.pleh;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -24,28 +25,6 @@ public class BulletinBoardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bulletin_board);
 
-        // OHAD code TODO delete
-        /*
-        this adds a user
-        User user = new User();
-        PlehAPI mAPIService = ApiUtils.getAPIService();
-        mAPIService.addUser(user).enqueue(new Callback<Long>() {
-            @Override
-            public void onResponse(Call<Long> call, Response<Long> response) {
-                Long id = response.body();
-                Log.e("log", String.valueOf(id));
-
-            }
-
-            @Override
-            public void onFailure(Call<Long> call, Throwable t) {
-
-            }
-        });
-        */
-
-
-
         progressBar = findViewById(R.id.wish_list_progress_bar);
         progressBar.setVisibility(View.GONE); // TODO change this!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -57,19 +36,11 @@ public class BulletinBoardActivity extends AppCompatActivity {
 
         RecyclerView.LayoutManager vetListLayoutManager = new LinearLayoutManager(this);
         wishListRecyclerView.setLayoutManager(vetListLayoutManager);
-//
-//        ListItemDecoration decoration = new ListItemDecoration(this, Color.LTGRAY, 1f);
-//        wishListRecyclerView.addItemDecoration(decoration);
 
         BulletinBoardAdapter.OnItemClickListener buttonsListener = new BulletinBoardAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Wish vetClinic) {
-//                Intent intent = new Intent(BulletinBoardActivity.this, WishDescriptionActivity.class);
-//                intent.putExtra(PLACE_ID, vetClinic.getPlaceId());
-//                intent.putExtra(NAME, vetClinic.getName());
-//                intent.putExtra(ADDRESS, vetClinic.getAddress());
-//                intent.putExtra(ORIGIN_LATITUDE, Double.toString(currLatitude));
-//                intent.putExtra(ORIGIN_LONGITUDE, Double.toString(currLongitude));
+//                Intent intent = new Intent(BulletinBoardActivity.this, PageWishDescription.class);
 //                startActivity(intent);
             }
         };
@@ -87,5 +58,10 @@ public class BulletinBoardActivity extends AppCompatActivity {
         wishList.add(new Wish("Cart", "Drugs", "help me", "Shahar", WishCategory.ITEMS, 11, 12));
         wishList.add(new Wish("Work", "Cookies", "help me", "Ohad", WishCategory.ITEMS, 12, 13));
         wishListRecyclerView.setAdapter(new BulletinBoardAdapter(wishList, buttonsListener));
+    }
+
+    public void OnOfferClick(View v) {
+        Intent intent = new Intent(BulletinBoardActivity.this, WishRequestActivity.class);
+        startActivity(intent);
     }
 }
