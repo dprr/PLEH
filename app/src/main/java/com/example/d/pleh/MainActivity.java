@@ -12,12 +12,15 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.e("log", "here");
+
         // Creating abbu branch
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 //        UserController userController = new UserController();
 //        userController.start();
 
+        Log.e("log", "hello");
         User user = new User();
         PlehAPI mAPIService = ApiUtils.getAPIService();
         mAPIService.addUser(user).enqueue(new Callback<Long>() {
