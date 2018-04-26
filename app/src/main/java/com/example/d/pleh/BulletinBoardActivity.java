@@ -4,20 +4,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class BulletinBoardActivity extends AppCompatActivity {
     private ProgressBar progressBar;
@@ -32,6 +25,7 @@ public class BulletinBoardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_bulletin_board);
 
         // OHAD code TODO delete
+        /*
         User user = new User();
         PlehAPI mAPIService = ApiUtils.getAPIService();
         mAPIService.addUser(user).enqueue(new Callback<Long>() {
@@ -47,6 +41,7 @@ public class BulletinBoardActivity extends AppCompatActivity {
 
             }
         });
+        */
 
         progressBar = findViewById(R.id.wish_list_progress_bar);
         progressBar.setVisibility(View.GONE); // TODO change this!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
