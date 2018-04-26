@@ -22,6 +22,11 @@ public class User {
         this.id = id;
     }
 
+    public User(String name, String email){
+        this.name = name;
+        this.email = email;
+    }
+
     public User() {
         HashSet<Integer> requests = new HashSet<Integer>(),
                 accomplishments = new HashSet<Integer>(), inProcess = new HashSet<Integer>();
