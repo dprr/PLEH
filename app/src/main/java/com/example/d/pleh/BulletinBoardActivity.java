@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
+import com.google.firebase.messaging.FirebaseMessaging;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,10 +60,18 @@ public class BulletinBoardActivity extends AppCompatActivity {
         wishList.add(new Wish("Cart", "Drugs", "help me", "Shahar", WishCategory.ITEMS, 11, 12));
         wishList.add(new Wish("Work", "Cookies", "help me", "Ohad", WishCategory.ITEMS, 12, 13));
         wishListRecyclerView.setAdapter(new BulletinBoardAdapter(wishList, buttonsListener));
+
+
+
+
+        FirebaseMessaging.getInstance().subscribeToTopic(String.valueOf(User.getUser().id));
+
+
     }
 
     public void OnOfferClick(View v) {
         Intent intent = new Intent(BulletinBoardActivity.this, WishRequestActivity.class);
         startActivity(intent);
     }
+
 }

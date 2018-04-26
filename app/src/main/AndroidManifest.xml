@@ -67,6 +67,7 @@
             android:parentActivityName=".BulletinBoardActivity"
             android:screenOrientation="portrait">
         </activity>
+        
     </application>
 
 </manifest>
