@@ -12,6 +12,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+import static com.example.d.pleh.User.getUser;
+
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
     private static final int REQUEST_SIGNUP = 0;
@@ -31,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
         _emailText = findViewById(R.id.input_email);
-        _passwordText = findViewById(R.id.input_password);
+//        _passwordText = findViewById(R.id.input_password);
         _loginButton = findViewById(R.id.btn_login);
         _signupLink = findViewById(R.id.link_signup);
 
@@ -71,10 +77,27 @@ public class LoginActivity extends AppCompatActivity {
         progressDialog.show();
 
         String email = _emailText.getText().toString();
-        String password = _passwordText.getText().toString();
+//        String password = _passwordText.getText().toString();
 
 
         // TODO: Implement your own authentication logic here.
+
+
+        PlehAPI mAPIService = ApiUtils.getAPIService();
+        mAPIService.getUserbyEmail(email).enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                getUser().copyUser(response.body());
+                Intent intent = new Intent(LoginActivity.this, BulletinBoardActivity.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+
+            }
+        });
+
 
         new android.os.Handler().postDelayed(
                 new Runnable() {
@@ -121,7 +144,7 @@ public class LoginActivity extends AppCompatActivity {
         boolean valid = true;
 
         String email = _emailText.getText().toString();
-        String password = _passwordText.getText().toString();
+//        String password = _passwordText.getText().toString();
 
         if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             _emailText.setError("enter a valid email address");

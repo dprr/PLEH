@@ -1,6 +1,7 @@
 package com.example.d.pleh;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -9,6 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 //import butterknife.ButterKnife;
 //import butterknife.InjectView;
@@ -64,11 +69,29 @@ public class SignupActivity extends AppCompatActivity {
 
         String name = _nameText.getText().toString();
         String email = _emailText.getText().toString();
-        String password = _passwordText.getText().toString();
+//        String password = _passwordText.getText().toString();
 
         // TODO: Implement your own signup logic here.
 
-        User u = new User(name, email);
+        User user = User.getUser().createUser(name, email);
+        PlehAPI mAPIService = ApiUtils.getAPIService();
+        mAPIService.addUser(user).enqueue(new Callback<Long>() {
+            @Override
+            public void onResponse(Call<Long> call, Response<Long> response) {
+                Long id = response.body();
+                Log.e("log", String.valueOf(id));
+                user.id = id;
+
+                Intent intent = new Intent(SignupActivity.this, BulletinBoardActivity.class);
+                startActivity(intent);
+
+            }
+
+            @Override
+            public void onFailure(Call<Long> call, Throwable t) {
+
+            }
+        });
 
         new android.os.Handler().postDelayed(
                 new Runnable() {
@@ -100,7 +123,7 @@ public class SignupActivity extends AppCompatActivity {
 
         String name = _nameText.getText().toString();
         String email = _emailText.getText().toString();
-        String password = _passwordText.getText().toString();
+//        String password = _passwordText.getText().toString();
 
         if (name.isEmpty() || name.length() < 3) {
             _nameText.setError("at least 3 characters");

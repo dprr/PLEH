@@ -3,34 +3,42 @@ package com.example.d.pleh;
 import java.util.HashSet;
 
 public class User {
+
+    private static User user = new User();
+
+    public static User getUser() {
+        return user;
+    }
+
+
     String phone, address, name, email;
     Reward reward;
     HashSet<Integer> requests, accomplishments, inProcess;
     long id;
 
-    public User(String phone, String address, String name, Reward reward,
-                HashSet<Integer> requests, HashSet<Integer> accomplishments,
-                HashSet<Integer> inProcess, String email, long id) {
-        this.phone = phone;
-        this.address = address;
-        this.name = name;
-        this.reward = reward;
-        this.requests = requests;
-        this.accomplishments = accomplishments;
-        this.inProcess = inProcess;
-        this.email = email;
-        this.id = id;
+    public void copyUser(User tempUser) {
+        this.phone = tempUser.phone;
+        this.address = tempUser.address;
+        this.name = tempUser.name;
+        this.reward = tempUser.reward;
+        this.requests = tempUser.requests;
+        this.accomplishments = tempUser.accomplishments;
+        this.inProcess = tempUser.inProcess;
+        this.email = tempUser.email;
+        this.id = tempUser.id;
     }
-
-    public User(String name, String email){
-        this.name = name;
-        this.email = email;
-    }
-
-    public User() {
-        HashSet<Integer> requests = new HashSet<Integer>(),
+//
+    private User(){
+                HashSet<Integer> requests = new HashSet<Integer>(),
                 accomplishments = new HashSet<Integer>(), inProcess = new HashSet<Integer>();
     }
+
+    public User createUser(String name, String email){
+        this.name = name;
+        this.email = email;
+        return this;
+    }
+
 
     public String getPhone() {
         return phone;
