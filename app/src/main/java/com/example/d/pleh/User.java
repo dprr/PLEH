@@ -6,11 +6,11 @@ public class User {
     String phone, address, name, email;
     Reward reward;
     HashSet<Integer> requests, accomplishments, inProcess;
-    long id; //todo add id
+    long id;
 
     public User(String phone, String address, String name, Reward reward,
                 HashSet<Integer> requests, HashSet<Integer> accomplishments,
-                HashSet<Integer> inProcess, String email) {
+                HashSet<Integer> inProcess, String email, long id) {
         this.phone = phone;
         this.address = address;
         this.name = name;
@@ -19,6 +19,7 @@ public class User {
         this.accomplishments = accomplishments;
         this.inProcess = inProcess;
         this.email = email;
+        this.id = id;
     }
 
     public User() {
@@ -28,6 +29,14 @@ public class User {
 
     public String getPhone() {
         return phone;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public void setPhone(String phone) {

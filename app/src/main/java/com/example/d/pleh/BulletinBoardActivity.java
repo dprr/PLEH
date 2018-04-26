@@ -26,6 +26,7 @@ public class BulletinBoardActivity extends AppCompatActivity {
 
         // OHAD code TODO delete
         /*
+        this adds a user
         User user = new User();
         PlehAPI mAPIService = ApiUtils.getAPIService();
         mAPIService.addUser(user).enqueue(new Callback<Long>() {
@@ -42,6 +43,8 @@ public class BulletinBoardActivity extends AppCompatActivity {
             }
         });
         */
+
+
 
         progressBar = findViewById(R.id.wish_list_progress_bar);
         progressBar.setVisibility(View.GONE); // TODO change this!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
