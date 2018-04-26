@@ -8,20 +8,39 @@ import java.util.HashSet;
 public class Wish {
     private String title, reward, description, author, cat;
     private HashSet<Integer> confirmed, applying;
-    private long id; //todo add id
+    private long id, authorId;
     private ImageView wishImage;
     private WishStatus wishStatus;
 
 
-    public Wish(String title, String reward, String description, String author, String cat) {
+    public Wish(String title, String reward, String description, String author, String cat,
+                long authorId, long id) {
         this.title = title;
         this.reward = reward;
         this.description = description;
         this.author = author;
         this.cat = cat;
+        this.authorId = authorId;
+        this.id = id;
         confirmed = new HashSet<Integer>();
         applying = new HashSet<Integer>();
 
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getAuthorId() {
+        return authorId;
+    }
+
+    public void setAuthorId(long authorId) {
+        this.authorId = authorId;
     }
 
     public WishStatus getWishStatus() {
