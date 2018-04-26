@@ -18,7 +18,12 @@ public class User {
         this.requests = requests;
         this.accomplishments = accomplishments;
         this.inProcess = inProcess;
-        this.email = email;//todo get+set
+        this.email = email;
+    }
+
+    public User() {
+        HashSet<Integer> requests = new HashSet<Integer>(),
+                accomplishments = new HashSet<Integer>(), inProcess = new HashSet<Integer>();
     }
 
     public String getPhone() {
@@ -27,6 +32,14 @@ public class User {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getAddress() {
