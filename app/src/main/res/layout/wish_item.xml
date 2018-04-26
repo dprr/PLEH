@@ -26,8 +26,8 @@
 
             <ImageView
                 android:id="@+id/wish_image"
-                android:layout_width="33dp"
-                android:layout_height="33dp" />
+                android:layout_width="@dimen/icon_default_size"
+                android:layout_height="@dimen/icon_default_size" />
 
             <TextView
                 android:id="@+id/wish_description"
@@ -48,8 +48,8 @@
 
             <ImageView
                 android:id="@+id/offer_image"
-                android:layout_width="33dp"
-                android:layout_height="33dp" />
+                android:layout_width="@dimen/icon_default_size"
+                android:layout_height="@dimen/icon_default_size" />
 
             <TextView
                 android:id="@+id/offer_description"

@@ -2,4 +2,9 @@
     <string name="app_name">PLEH</string>
     <string name="I_need">I need</string>
     <string name="bulletin_activity_vet_list">I need</string>
+    <string name="grantWish">I\'ll be your hero!</string>
+    <string name="I_offer">What I can Give</string>
+    <string name="wish_title_hint">Summarize your request</string>
+    <string name="wish_title">Help me with:</string>
+    <string name="wish_description_string">Wish Description</string>
 </resources>
