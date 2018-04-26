@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bulletin_board_background"
+    android:background="@drawable/bulletin_bg_img"
     android:padding="30dp"
     tools:context=".User"
     android:orientation="vertical">

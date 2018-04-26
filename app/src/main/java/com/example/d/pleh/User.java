@@ -122,4 +122,7 @@ public class User {
 
     public long getID() { return id;}
 
+    public void init() {
+        user = new User();
+    }
 }

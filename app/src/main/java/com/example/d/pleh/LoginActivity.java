@@ -34,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        getUser().init();
 
 
         _emailText = findViewById(R.id.input_email);
