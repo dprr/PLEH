@@ -5,7 +5,6 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
-import retrofit2.http.Query;
 
 public interface PlehAPI {
     @GET("user/all")
@@ -14,7 +13,10 @@ public interface PlehAPI {
     @POST("user/create")
     Call<Long> addUser(@Body User user);
 
-//    @GET("wish/")
-//    Call<List<Wish>> getUser();
+    @GET("wish/all")
+    Call<List<Wish>> getWish();
+
+    @POST("wish/create")
+    Call<Long> addWish(@Body User user);
 //    //todo same for wish and etc.
 }

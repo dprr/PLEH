@@ -10,6 +10,7 @@ public class Wish {
     private HashSet<Integer> confirmed, applying;
     private long id; //todo add id
     private ImageView wishImage;
+    private WishStatus wishStatus;
 
 
     public Wish(String title, String reward, String description, String author, String cat) {
@@ -18,17 +19,17 @@ public class Wish {
         this.description = description;
         this.author = author;
         this.cat = cat;
-        confirmed = new HashSet<>();
-        applying = new HashSet<>();
+        confirmed = new HashSet<Integer>();
+        applying = new HashSet<Integer>();
 
     }
 
-    public void setConfirmed(HashSet<Integer> confirmed) {
-        this.confirmed = confirmed;
+    public WishStatus getWishStatus() {
+        return wishStatus;
     }
 
-    public void setApplying(HashSet<Integer> applying) {
-        this.applying = applying;
+    public void setWishStatus(WishStatus wishStatus) {
+        this.wishStatus = wishStatus;
     }
 
     public String getTitle() {
