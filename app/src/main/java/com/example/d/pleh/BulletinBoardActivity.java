@@ -1,6 +1,5 @@
 package com.example.d.pleh;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,6 +9,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,6 +55,14 @@ public class BulletinBoardActivity extends AppCompatActivity {
             }
         };
 
+        wishList.add(new Wish("Sofa", "Beer", "help me", "Yoni", "medicine"));
+        wishList.add(new Wish("Translation", "Cookies", "help me", "Felber", "medicine"));
+        wishList.add(new Wish("Cart", "Drugs", "help me", "Shahar", "medicine"));
+        wishList.add(new Wish("Work", "Cookies", "help me", "Ohad", "medicine"));
+        wishList.add(new Wish("Sofa", "Beer", "help me", "Yoni", "medicine"));
+        wishList.add(new Wish("Translation", "Cookies", "help me", "Felber", "medicine"));
+        wishList.add(new Wish("Cart", "Drugs", "help me", "Shahar", "medicine"));
+        wishList.add(new Wish("Work", "Cookies", "help me", "Ohad", "medicine"));
         wishList.add(new Wish("Sofa", "Beer", "help me", "Yoni", "medicine"));
         wishList.add(new Wish("Translation", "Cookies", "help me", "Felber", "medicine"));
         wishList.add(new Wish("Cart", "Drugs", "help me", "Shahar", "medicine"));
