@@ -11,32 +11,50 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class WishRequestActivity extends AppCompatActivity {
-    private TextView wishTitle = findViewById(R.id.txtDescPageTitle);
-    private TextView wishDescription = findViewById(R.id.wish_description);
-    private TextView txtDescription = findViewById(R.id.wish_description);
-    private ImageButton btnWishWork = findViewById(R.id.iconWork);
-    private ImageButton btnWishGeneralItems = findViewById(R.id.iconCart);
-    private ImageButton btnWishMed = findViewById(R.id.iconMedicine);
-    private ImageButton btnWishTrans = findViewById(R.id.iconTranslate);
-    private ImageButton btnWishPpl = findViewById(R.id.iconVolunteers);
-    private ImageButton btnRewPiggy = findViewById(R.id.iconPiggyBank);
-    private ImageButton btnRewCookies = findViewById(R.id.iconCookies);
-    private ImageButton btnRewDrink = findViewById(R.id.iconDrink);
-    private ImageButton btnRewFood = findViewById(R.id.iconFood);
-    private ImageButton btnRewGeneralItems = findViewById(R.id.iconGeneral);
-
-    private int btns[] = new int[5];
-    private Button btnRequestWish = findViewById(R.id.btnAskForWish);
-
-    private WishCategoryType wishCategoryType = WishCategoryType.VOLUNTEERS;
-    private RewardCategoryType rewardCategoryType = RewardCategoryType.FOOD;
+public class WishRequestActivity extends AppCompatActivity
+{
+    private TextView wishTitle;
+    private TextView wishDescription;
+    private TextView txtDescription;
+    private ImageButton btnWishWork;
+    private ImageButton btnWishGeneralItems;
+    private ImageButton btnWishMed;
+    private ImageButton btnWishTrans;
+    private ImageButton btnWishPpl;
+    private ImageButton btnRewPiggy;
+    private ImageButton btnRewCookies;
+    private ImageButton btnRewDrink;
+    private ImageButton btnRewFood;
+    private ImageButton btnRewGeneralItems;
+    private Button btnRequestWish;
+    int categoryBtns[];
+    int rewardBtns[];
+    private WishCategoryType wishCategoryType;
+    private RewardCategoryType rewardCategoryType;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wish_request);
-
+        wishTitle = findViewById(R.id.txtDescPageTitle);
+        wishDescription = findViewById(R.id.txtWishDesc);
+        txtDescription = findViewById(R.id.txtDescPageDesc);
+        btnWishWork = findViewById(R.id.iconWork);
+        btnWishGeneralItems = findViewById(R.id.iconCart);
+        btnWishMed = findViewById(R.id.iconMedicine);
+        btnWishTrans = findViewById(R.id.iconTranslate);
+        btnWishPpl = findViewById(R.id.iconVolunteers);
+        btnRewPiggy = findViewById(R.id.iconPiggyBank);
+        btnRewCookies = findViewById(R.id.iconCookies);
+        btnRewDrink = findViewById(R.id.iconDrink);
+        btnRewFood = findViewById(R.id.iconFood);
+        btnRewGeneralItems = findViewById(R.id.iconGeneral);
+        btnRequestWish = findViewById(R.id.btnAskForWish);
+        wishCategoryType = WishCategoryType.VOLUNTEERS;
+        rewardCategoryType = RewardCategoryType.FOOD;
+        categoryBtns = new int[5];
+        rewardBtns = new int[5];
         btnRequestWish.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -48,21 +66,22 @@ public class WishRequestActivity extends AppCompatActivity {
 
                 PlehAPI mAPIService = ApiUtils.getAPIService();
 
-                mAPIService.addWish(wish).enqueue(new Callback<Long>() {
+                mAPIService.addWish(wish).enqueue(new Callback<Long>()
+                {
                     @Override
-                    public void onResponse(Call<Long> call, Response<Long> response) {
+                    public void onResponse(Call<Long> call, Response<Long> response)
+                    {
                         Long id = response.body();
                         wish.setId(id);
                     }
 
                     @Override
-                    public void onFailure(Call<Long> call, Throwable t) {
+                    public void onFailure(Call<Long> call, Throwable t)
+                    {
 
                     }
                 });
             }
         });
-
-
     }
 }
