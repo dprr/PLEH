@@ -28,7 +28,7 @@
             android:layout_marginTop="12dp"
             android:layout_weight="0.7"
             android:fontFamily="casual"
-
+            android:paddingTop="14dp"
             android:text="What type of help do you need?"
             android:textColor="@color/textColorOnTint"
             android:textSize="22sp"
@@ -129,6 +129,7 @@
             android:layout_weight="0.8"
             android:fontFamily="casual"
             android:text="In return, I’ll gift with.."
+            android:paddingTop="18dp"
             android:textColor="@color/textColorOnTint"
             android:textSize="22sp"
             android:textStyle="bold" />
@@ -211,6 +212,7 @@
                 android:fontFamily="casual"
                 android:gravity="center"
                 android:foregroundGravity="center"
+                android:textSize="17dp"
                 android:hint="Click and elaborate how you would show your gratfulness"
                 android:textColor="@android:color/black"
                 android:textStyle="bold" />
@@ -225,6 +227,7 @@
             android:layout_weight="0.8"
             android:fontFamily="casual"
             android:text="Details"
+            android:paddingTop="17dp"
             android:textColor="@color/textColorOnTint"
             android:textSize="25sp"
             android:textStyle="bold" />
