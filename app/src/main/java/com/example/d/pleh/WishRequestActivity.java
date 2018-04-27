@@ -63,7 +63,7 @@ public class WishRequestActivity extends AppCompatActivity
                 Wish wish = new Wish("Feeding Poor", wishCategoryType,
                         "Help distibuting food", "Spaghetti",
                         rewardCategoryType, "A loaf of bread", User.getUser().getID());
-
+                BulletinBoardActivity.wishListRecyclerView.getAdapter().notifyDataSetChanged();
                 PlehAPI mAPIService = ApiUtils.getAPIService();
 
                 mAPIService.addWish(wish).enqueue(new Callback<Long>()

@@ -23,17 +23,19 @@ import retrofit2.Response;
 
 public class BulletinBoardActivity extends AppCompatActivity {
     public static final String REWARD_IMAGE = "com.example.hasorkim.reward_image";
-
+    public static BulletinBoardActivity bulletinBoardActivity;
     private ProgressBar progressBar;
     private LinearLayout wishListLayout;
-    private RecyclerView wishListRecyclerView;
+    public static RecyclerView wishListRecyclerView;
     private Button createWishButton;
-    private List<Wish> wishList = new ArrayList<>();
+    public List<Wish> wishList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bulletin_board);
+
+
 
         progressBar = findViewById(R.id.wish_list_progress_bar);
         progressBar.setVisibility(View.GONE); // TODO change this!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
