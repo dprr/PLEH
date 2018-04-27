@@ -18,32 +18,36 @@
 
     <!-- Email Label -->
     <!--<android.support.design.widget.TextInputLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginBottom="8dp"-->
-        <!--android:layout_marginTop="8dp">-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginBottom="8dp"-->
+    <!--android:layout_marginTop="8dp">-->
 
-        <EditText
-            android:id="@+id/input_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Email"
-            android:inputType="textEmailAddress" />
+    <EditText
+        android:id="@+id/input_email"
+        android:layout_width="match_parent"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
     <!--</android.support.design.widget.TextInputLayout>-->
 
     <!-- Password Label -->
     <!--<android.support.design.widget.TextInputLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginBottom="8dp"-->
-        <!--android:layout_marginTop="8dp">-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginBottom="8dp"-->
+    <!--android:layout_marginTop="8dp">-->
 
-        <!--<EditText-->
-            <!--android:id="@+id/input_password"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:hint="Password"-->
-            <!--android:inputType="textPassword" />-->
+    <EditText
+        android:id="@+id/input_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:textStyle="bold"
+        android:hint="Password"
+        android:inputType="textPassword" />
     <!--</android.support.design.widget.TextInputLayout>-->
 
     <android.support.v7.widget.AppCompatButton
@@ -51,7 +55,9 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
+        android:textStyle="bold"
         android:layout_marginTop="24dp"
+        android:fontFamily="casual"
         android:padding="12dp"
         android:text="Login" />
 
@@ -60,6 +66,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
+        android:fontFamily="casual"
         android:gravity="center"
         android:text="No account yet? Create one"
         android:textSize="16dip" />

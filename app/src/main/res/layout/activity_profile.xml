@@ -35,6 +35,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:textStyle="bold"
                 android:layout_gravity="center"
                 android:text="Crazy Monkey"
                 android:textSize="25sp" />
@@ -42,6 +44,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:fontFamily="casual"
                 android:layout_gravity="center"
                 android:text="Karma Score"
                 android:textSize="12sp" />
@@ -60,6 +64,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:textStyle="bold"
                 android:layout_gravity="center"
                 android:paddingStart="10dp"
                 android:text="Phone"
@@ -76,6 +82,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:textStyle="bold"
                 android:layout_gravity="center"
                 android:paddingStart="10dp"
                 android:text="Email"
@@ -92,6 +100,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:textStyle="bold"
                 android:layout_gravity="center"
                 android:paddingStart="10dp"
                 android:text="Email"
@@ -107,7 +117,9 @@
 
             <TextView
                 android:layout_width="wrap_content"
+                android:fontFamily="casual"
                 android:layout_height="wrap_content"
+                android:textStyle="bold"
                 android:layout_gravity="center"
                 android:paddingStart="10dp"
                 android:text="Email"

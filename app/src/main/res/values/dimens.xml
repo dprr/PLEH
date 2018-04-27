@@ -7,10 +7,11 @@
     <dimen name="bullet_text_size">17sp</dimen>
     <dimen name="I_need_size">23sp</dimen>
     <dimen name="icon_default_size">33dp</dimen>
+    <dimen name="icon_page_description_size">50dp</dimen>
     <dimen name="descPageTitleTextSize">33sp</dimen>
     <dimen name="descPageDescTextSize">22sp</dimen>
     <dimen name="descPageDescTextPadding">5dp</dimen>
-    <dimen name="descPageTitleTextPadding">5dp</dimen>
+    <dimen name="descPageTitleTextPadding">9dp</dimen>
     <dimen name="wish_report_padding">16dp</dimen>
     <dimen name="wish_title_size">17sp</dimen>
     <dimen name="horizontal_tint_margin">7dp</dimen>
