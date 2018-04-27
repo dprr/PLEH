@@ -6,20 +6,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-
-import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class BulletinBoardActivity extends AppCompatActivity {
+    public static final String REWARD_IMAGE = "com.example.hasorkim.reward_image";
+
     private ProgressBar progressBar;
     private LinearLayout wishListLayout;
     private RecyclerView wishListRecyclerView;
-    private Button createWishButton;
     private List<Wish> wishList = new ArrayList<>();
 
     @Override
@@ -32,41 +34,26 @@ public class BulletinBoardActivity extends AppCompatActivity {
 
         wishListLayout = findViewById(R.id.wish_list_layout);
         wishListRecyclerView = findViewById(R.id.wish_list_recycler_view);
-        createWishButton = findViewById(R.id.create_wish_btn);
-
         wishListRecyclerView.setHasFixedSize(true);
 
         RecyclerView.LayoutManager vetListLayoutManager = new LinearLayoutManager(this);
         wishListRecyclerView.setLayoutManager(vetListLayoutManager);
 
-        BulletinBoardAdapter.OnItemClickListener buttonsListener = new BulletinBoardAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(Wish vetClinic) {
-                Intent intent = new Intent(BulletinBoardActivity.this, PageWishDescription.class);
-                startActivity(intent);
-            }
-        };
+        getWishes();
 
-        wishList.add(new Wish("Sofa", "Beer", "help me", "Yoni", WishCategory.ITEMS, 0, 1));
-        wishList.add(new Wish("Translation", "Cookies", "help me", "Felber", WishCategory.ITEMS, 1, 2));
-        wishList.add(new Wish("Cart", "Drugs", "help me", "Shahar", WishCategory.ITEMS, 2, 3));
-        wishList.add(new Wish("Work", "Cookies", "help me", "Ohad", WishCategory.ITEMS, 3, 4));
-        wishList.add(new Wish("Sofa", "Beer", "help me", "Yoni", WishCategory.ITEMS, 4, 5));
-        wishList.add(new Wish("Translation", "Cookies", "help me", "Felber", WishCategory.ITEMS, 5, 6));
-        wishList.add(new Wish("Cart", "Drugs", "help me", "Shahar", WishCategory.ITEMS, 6, 7));
-        wishList.add(new Wish("Work", "Cookies", "help me", "Ohad", WishCategory.ITEMS, 7, 8));
-        wishList.add(new Wish("Sofa", "Beer", "help me", "Yoni", WishCategory.ITEMS, 8, 9));
-        wishList.add(new Wish("Translation", "Cookies", "help me", "Felber", WishCategory.ITEMS, 9, 10));
-        wishList.add(new Wish("Cart", "Drugs", "help me", "Shahar", WishCategory.ITEMS, 11, 12));
-        wishList.add(new Wish("Work", "Cookies", "help me", "Ohad", WishCategory.ITEMS, 12, 13));
-        wishListRecyclerView.setAdapter(new BulletinBoardAdapter(wishList, buttonsListener));
-
-
-
-
-        FirebaseMessaging.getInstance().subscribeToTopic(String.valueOf(User.getUser().id));
-
-
+//        wishList.add(new Wish("Sofa", RewardCategory.DRUGS, "help me", "Yoni", WishCategoryType.ITEMS, 0));
+//        wishList.add(new Wish("Translation", RewardCategory.DRUGS, "help me", "Felber", WishCategoryType.ITEMS, 1));
+//        wishList.add(new Wish("Cart", RewardCategory.DRUGS, "help me", "Shahar", WishCategoryType.ITEMS, 2));
+//        wishList.add(new Wish("Work", RewardCategory.DRUGS, "help me", "Ohad", WishCategoryType.ITEMS, 3));
+//        wishList.add(new Wish("Sofa", RewardCategory.DRUGS, "help me", "Yoni", WishCategoryType.ITEMS, 4));
+//        wishList.add(new Wish("Translation", RewardCategory.DRUGS, "help me", "Felber", WishCategoryType.ITEMS, 5));
+//        wishList.add(new Wish("Cart", RewardCategory.DRUGS, "help me", "Shahar", WishCategoryType.ITEMS, 6));
+//        wishList.add(new Wish("Work", RewardCategory.DRUGS, "help me", "Ohad", WishCategoryType.ITEMS, 7));
+//        wishList.add(new Wish("Sofa", RewardCategory.DRUGS, "help me", "Yoni", WishCategoryType.ITEMS, 8));
+//        wishList.add(new Wish("Translation", RewardCategory.DRUGS, "help me", "Felber", WishCategoryType.ITEMS, 9));
+//        wishList.add(new Wish("Cart", RewardCategory.DRUGS, "help me", "Shahar", WishCategoryType.ITEMS, 11));
+//        wishList.add(new Wish("Work", RewardCategory.DRUGS, "help me", "Ohad", WishCategoryType.ITEMS, 12));
+//        wishListRecyclerView.setAdapter(new BulletinBoardAdapter(wishList, buttonsListener));
     }
 
     public void OnOfferClick(View v) {
@@ -74,4 +61,41 @@ public class BulletinBoardActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    private void getWishes() {
+        PlehAPI mAPIService = ApiUtils.getAPIService();
+        mAPIService.getWish().enqueue(new Callback<List<Wish>>() {
+            @Override
+            public void onResponse(Call<List<Wish>> call, Response<List<Wish>> response) {
+                wishList = response.body();
+                updateUI();
+            }
+
+            @Override
+            public void onFailure(Call<List<Wish>> call, Throwable t) {
+
+            }
+        });
+    }
+
+    private void updateUI() {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                final BulletinBoardAdapter.OnItemClickListener buttonsListener = new BulletinBoardAdapter.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(Wish item) {
+//                        Intent intent = new Intent(BulletinBoardActivity.this, PageWishDescription.class);
+//                        intent.putExtra(REWARD_IMAGE, Wish.getRewardOffer(item.getRewardCategory()));
+//
+//                        startActivity(intent);
+                        Intent intent = new Intent(BulletinBoardActivity.this, PageWishDescription.class);
+                        startActivity(intent);
+                    }
+                };
+
+                progressBar.setVisibility(View.GONE);
+                wishListLayout.setVisibility(View.VISIBLE);
+            }
+        });
+    }
 }

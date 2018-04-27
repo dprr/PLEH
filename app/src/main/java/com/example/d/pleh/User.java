@@ -12,22 +12,34 @@ public class User {
 
 
     String phone, address, name, email;
-    Reward reward;
+    RewardCategoryType rewardCatagory;
     HashSet<Integer> requests, accomplishments, inProcess;
     long id;
 
+    public User(String phone, String address, String name, RewardCategoryType rewardCatagory,
+                HashSet<Integer> requests, HashSet<Integer> accomplishments,
+                HashSet<Integer> inProcess, String email, long id) {
+        this.phone = phone;
+        this.address = address;
+        this.name = name;
+        this.rewardCatagory = rewardCatagory;
+        this.requests = requests;
+        this.accomplishments = accomplishments;
+        this.inProcess = inProcess;
+        this.email = email;
+        this.id = id;
+    }
     public void copyUser(User tempUser) {
         this.phone = tempUser.phone;
         this.address = tempUser.address;
         this.name = tempUser.name;
-        this.reward = tempUser.reward;
+        this.rewardCatagory = tempUser.rewardCatagory;
         this.requests = tempUser.requests;
         this.accomplishments = tempUser.accomplishments;
         this.inProcess = tempUser.inProcess;
         this.email = tempUser.email;
         this.id = tempUser.id;
     }
-//
     private User(){
                 HashSet<Integer> requests = new HashSet<Integer>(),
                 accomplishments = new HashSet<Integer>(), inProcess = new HashSet<Integer>();
@@ -80,12 +92,12 @@ public class User {
         this.name = name;
     }
 
-    public Reward getReward() {
-        return reward;
+    public RewardCategoryType getRewardCatagory() {
+        return rewardCatagory;
     }
 
-    public void setReward(Reward reward) {
-        this.reward = reward;
+    public void setRewardCatagory(RewardCategoryType rewardCatagory) {
+        this.rewardCatagory = rewardCatagory;
     }
 
     public HashSet<Integer> getRequests() {

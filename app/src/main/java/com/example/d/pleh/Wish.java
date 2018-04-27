@@ -2,38 +2,37 @@ package com.example.d.pleh;
 
 import android.widget.ImageView;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 
 public class Wish {
-    private String title, reward, description, author;
-    private WishCategory wishCategory;
+    private String wishTitle, wishDescription, rewardTitle, rewardDescription/*, author*/;
+    private WishCategoryType wishCategoryType;
+    private RewardCategoryType rewardCategoryType;
     private HashSet<Integer> confirmed, applying;
     private long id, authorId;
     private ImageView wishImage;
-    private WishStatus wishStatus;
+    private WishStatusType wishStatusType;
 
-
-    public Wish(String title, String reward, String description, String author,
-                WishCategory wishCategory, long authorId, long id) {
-        this.title = title;
-        this.reward = reward;
-        this.description = description;
-        this.author = author;
-        this.wishCategory = wishCategory;
+    public Wish(String wishTitle, WishCategoryType wishCategoryType, String wishDescription, String rewardTitle, RewardCategoryType rewardCategoryType,
+                String rewardDescription, /* String author, */ long authorId) {
+        this.wishTitle = wishTitle;
+        this.wishCategoryType = wishCategoryType;
+        this.wishDescription = wishDescription;
+//        this.author = author; // TODO check if needed
+        this.rewardTitle = rewardTitle;
+        this.rewardCategoryType = rewardCategoryType;
+        this.rewardDescription = rewardDescription;
         this.authorId = authorId;
-        this.id = id;
-        confirmed = new HashSet<Integer>();
-        applying = new HashSet<Integer>();
-
+        confirmed = new HashSet<>();
+        applying = new HashSet<>();
     }
 
-    public WishCategory getWishCategory() {
-        return wishCategory;
+    public WishCategoryType getWishCategoryType() {
+        return wishCategoryType;
     }
 
-    public void setWishCategory(WishCategory wishCategory) {
-        this.wishCategory = wishCategory;
+    public void setWishCategoryType(WishCategoryType wishCategoryType) {
+        this.wishCategoryType = wishCategoryType;
     }
 
     public long getId() {
@@ -52,44 +51,20 @@ public class Wish {
         this.authorId = authorId;
     }
 
-    public WishStatus getWishStatus() {
-        return wishStatus;
+    public WishStatusType getWishStatusType() {
+        return wishStatusType;
     }
 
-    public void setWishStatus(WishStatus wishStatus) {
-        this.wishStatus = wishStatus;
+    public void setWishStatusType(WishStatusType wishStatusType) {
+        this.wishStatusType = wishStatusType;
     }
 
-    public String getTitle() {
-        return title;
+    public RewardCategoryType getRewardCategoryType() {
+        return rewardCategoryType;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getReward() {
-        return reward;
-    }
-
-    public void setReward(String reward) {
-        this.reward = reward;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setRewardCatagory(RewardCategoryType rewardCategoryType) {
+        this.rewardCategoryType = rewardCategoryType;
     }
 
     public HashSet<Integer> getConfirmed() {
@@ -117,5 +92,72 @@ public class Wish {
 
     public void setWishImage(ImageView wishImage) {
         this.wishImage = wishImage;
+    }
+
+    public static int getRewardImage(RewardCategoryType reward) {
+        switch (reward) {
+            case MONEY:
+                return R.drawable.piggy_bank;
+
+            case DRUGS:
+                return R.drawable.medicine;
+
+            case EVENT:
+                return R.drawable.food_and_drink;
+
+            default:
+                return R.drawable.cart;
+        }
+    }
+
+    public static int getWishImage(WishCategoryType reward) {
+        switch (reward) {
+            case ITEMS:
+                return R.drawable.food_and_drink;
+
+            case WORK:
+                return R.drawable.hammer;
+
+            case VOLUNTEERS:
+                return R.drawable.network;
+
+            case TRANSLATING:
+                return R.drawable.translate;
+
+            default:
+                return R.drawable.cart;
+        }
+    }
+
+    public String getWishTitle() {
+        return wishTitle;
+    }
+
+    public void setWishTitle(String wishTitle) {
+        this.wishTitle = wishTitle;
+    }
+
+    public String getWishDescription() {
+        return wishDescription;
+    }
+
+    public void setWishDescription(String wishDescription) {
+        this.wishDescription = wishDescription;
+    }
+
+    public String getRewardTitle() {
+        return rewardTitle;
+    }
+
+    public void setRewardTitle(String rewardTitle) {
+        this.rewardTitle = rewardTitle;
+    }
+
+    public String getRewardDescription() {
+        return rewardDescription;
+    }
+
+    public void setRewardDescription(String rewardDescription) {
+        this.rewardDescription = rewardDescription;
     }
 }

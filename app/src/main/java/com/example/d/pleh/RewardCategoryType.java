@@ -1,6 +1,6 @@
 package com.example.d.pleh;
 
-public enum Reward {
+public enum RewardCategoryType {
     MONEY, DRUGS, EVENT
 }
 

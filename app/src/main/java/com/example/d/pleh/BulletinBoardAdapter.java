@@ -53,10 +53,10 @@ public class BulletinBoardAdapter extends RecyclerView.Adapter<BulletinBoardAdap
         }
 
         public void bind(final Wish item, final OnItemClickListener listener) {
-            wishImageView.setImageResource(R.drawable.medicine);
-            wishDescriptionTextView.setText("Wish");
-            offerImageView.setImageResource(R.drawable.drink);
-            offerDescriptionTextView.setText("Offer");
+            wishImageView.setImageResource(Wish.getRewardImage(item.getRewardCategoryType()));
+            wishDescriptionTextView.setText(item.getWishTitle());
+            offerImageView.setImageResource(Wish.getWishImage(item.getWishCategoryType()));
+            offerDescriptionTextView.setText(item.getRewardTitle());
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
