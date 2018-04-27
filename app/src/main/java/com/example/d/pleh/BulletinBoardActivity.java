@@ -5,9 +5,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +27,7 @@ public class BulletinBoardActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private LinearLayout wishListLayout;
     private RecyclerView wishListRecyclerView;
+    private Button createWishButton;
     private List<Wish> wishList = new ArrayList<>();
 
     @Override
@@ -29,11 +35,15 @@ public class BulletinBoardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bulletin_board);
 
+
+
         progressBar = findViewById(R.id.wish_list_progress_bar);
         progressBar.setVisibility(View.GONE); // TODO change this!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
         wishListLayout = findViewById(R.id.wish_list_layout);
         wishListRecyclerView = findViewById(R.id.wish_list_recycler_view);
+        createWishButton = findViewById(R.id.create_wish_btn);
+
         wishListRecyclerView.setHasFixedSize(true);
 
         RecyclerView.LayoutManager vetListLayoutManager = new LinearLayoutManager(this);

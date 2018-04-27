@@ -84,6 +84,7 @@ public class SignupActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(SignupActivity.this, BulletinBoardActivity.class);
                 startActivity(intent);
+                finish();
 
             }
 

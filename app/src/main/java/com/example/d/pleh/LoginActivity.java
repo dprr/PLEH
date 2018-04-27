@@ -36,7 +36,6 @@ public class LoginActivity extends AppCompatActivity {
 
         getUser().init();
 
-
         _emailText = findViewById(R.id.input_email);
 //        _passwordText = findViewById(R.id.input_password);
         _loginButton = findViewById(R.id.btn_login);
@@ -88,9 +87,19 @@ public class LoginActivity extends AppCompatActivity {
         mAPIService.getUserbyEmail(email).enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
-                getUser().copyUser(response.body());
-                Intent intent = new Intent(LoginActivity.this, BulletinBoardActivity.class);
-                startActivity(intent);
+                if(response.isSuccessful()){
+                    getUser().copyUser(response.body());
+                    Intent intent = new Intent(LoginActivity.this, BulletinBoardActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+
+                else {
+                    Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+
             }
 
             @Override
@@ -100,15 +109,15 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-        new android.os.Handler().postDelayed(
-                new Runnable() {
-                    public void run() {
-                        // On complete call either onLoginSuccess or onLoginFailed
-                        onLoginSuccess();
-                        // onLoginFailed();
-                        progressDialog.dismiss();
-                    }
-                }, 3000);
+//        new android.os.Handler().postDelayed(
+//                new Runnable() {
+//                    public void run() {
+//                        // On complete call either onLoginSuccess or onLoginFailed
+//                        onLoginSuccess();
+//                        // onLoginFailed();
+////                        progressDialog.dismiss();
+//                    }
+//                }, 3000);
     }
 
 
