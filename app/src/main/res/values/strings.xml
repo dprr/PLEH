@@ -13,4 +13,5 @@
     <string name="wish_title_hint">Summarize your request</string>
     <string name="wish_description_string">Wish Description</string>
     <string name="pleh_page_title_hint">Click and tell us more, keep it short, you\'ll have more room later</string>
+    <string name="createPlehbtnText">Make my day!</string>
 </resources>

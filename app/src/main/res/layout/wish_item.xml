@@ -31,7 +31,7 @@
                 android:layout_height="@dimen/icon_default_size" />
 
             <TextView
-                android:id="@+id/wish_description"
+                android:id="@+id/txtWishDesc"
                 android:textStyle="bold"
                 android:fontFamily="casual"
                 android:layout_width="wrap_content"

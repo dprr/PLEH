@@ -158,7 +158,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnGrantWish"
+        android:id="@+id/btnAskForWish"
 
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"

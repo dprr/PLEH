@@ -101,7 +101,7 @@ public class SignupActivity extends AppCompatActivity {
                         // depending on success
                         onSignupSuccess();
                         // onSignupFailed();
-                        progressDialog.dismiss();
+//                        progressDialog.dismiss();  Causes
                     }
                 }, 3000);
     }

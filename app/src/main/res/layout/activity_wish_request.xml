@@ -103,7 +103,7 @@
             android:backgroundTint="@android:color/holo_blue_dark"
             android:orientation="horizontal">
 
-            <TextView
+            <EditText
                 android:id="@+id/txtDescPageTitle"
 
                 android:hint="@string/pleh_page_title_hint"
@@ -111,7 +111,7 @@
                 android:layout_marginHorizontal="15dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-
+                android:textSize="11sp"
                 android:gravity="center"
                 android:fontFamily="casual"
                 android:textColor="@android:color/black"
@@ -154,7 +154,7 @@
                 android:src="@drawable/piggy_bank" />
 
             <ImageButton
-                android:id="@+id/iconitems"
+                android:id="@+id/iconCookies"
 
                 android:layout_width="@dimen/icon_default_size"
                 android:layout_height="match_parent"
@@ -181,7 +181,7 @@
                 android:src="@drawable/food_and_drink" />
 
             <ImageButton
-                android:id="@+id/iconCookies"
+                android:id="@+id/iconGeneral"
 
                 android:layout_width="@dimen/icon_default_size"
                 android:layout_height="match_parent"
@@ -198,19 +198,20 @@
             android:layout_height="0dp"
             android:layout_marginLeft="37dp"
             android:layout_marginTop="15dp"
-            android:layout_weight=".70"
+            android:layout_weight=".9"
             android:background="@drawable/tint"
             android:backgroundTint="@android:color/holo_blue_dark"
             android:orientation="horizontal">
 
-            <TextView
+            <EditText
                 android:id="@+id/txtRewardTitle"
 
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:fontFamily="casual"
                 android:gravity="center"
+                android:textSize="11sp"
                 android:foregroundGravity="center"
                 android:textSize="17dp"
                 android:hint="Click and elaborate how you would show your gratfulness"
@@ -220,6 +221,7 @@
         </LinearLayout>
 
         <TextView
+
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_gravity="center"
@@ -245,13 +247,15 @@
             android:orientation="horizontal">
 
 
-            <TextView
+            <EditText
                 android:id="@+id/txtDescPageDesc"
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="8dp"
                 android:layout_marginTop="9dp"
+                android:textSize="11sp"
+                android:hint="Please supply as many as  details possible about what it is you need"
                 android:layout_weight="1"
                 android:fontFamily="casual"
                 android:gravity="center_vertical"
@@ -263,13 +267,13 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnGrantWish"
+        android:id="@+id/btnAskForWish"
 
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="3dp"
         android:layout_marginRight="3dp"
-        android:text="@string/grantWish"
+        android:text="@string/createPlehbtnText"
         android:textStyle="bold" />
 </LinearLayout>
