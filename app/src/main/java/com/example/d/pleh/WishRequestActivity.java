@@ -1,5 +1,6 @@
 package com.example.d.pleh;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -15,7 +16,7 @@ public class WishRequestActivity extends AppCompatActivity
 {
     private TextView wishTitle;
     private TextView wishDescription;
-    private TextView txtDescription;
+    private TextView rewardTitle;
     private ImageButton btnWishWork;
     private ImageButton btnWishGeneralItems;
     private ImageButton btnWishMed;
@@ -38,8 +39,8 @@ public class WishRequestActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wish_request);
         wishTitle = findViewById(R.id.txtDescPageTitle);
-        wishDescription = findViewById(R.id.txtWishDesc);
-        txtDescription = findViewById(R.id.txtDescPageDesc);
+        wishDescription = findViewById(R.id.txtDescPageDesc);
+        rewardTitle = findViewById(R.id.txtRewardTitle);
         btnWishWork = findViewById(R.id.iconWork);
         btnWishGeneralItems = findViewById(R.id.iconCart);
         btnWishMed = findViewById(R.id.iconMedicine);
@@ -55,14 +56,16 @@ public class WishRequestActivity extends AppCompatActivity
         rewardCategoryType = RewardCategoryType.FOOD;
         categoryBtns = new int[5];
         rewardBtns = new int[5];
+
         btnRequestWish.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
-                Wish wish = new Wish("Feeding Poor", wishCategoryType,
-                        "Help distibuting food", "Spaghetti",
+                Wish wish = new Wish(wishTitle.getText().toString(), wishCategoryType,
+                        wishDescription.getText().toString(), rewardTitle.getText().toString(),
                         rewardCategoryType, "A loaf of bread", User.getUser().getID());
+
                 BulletinBoardActivity.wishListRecyclerView.getAdapter().notifyDataSetChanged();
                 PlehAPI mAPIService = ApiUtils.getAPIService();
 
@@ -80,7 +83,12 @@ public class WishRequestActivity extends AppCompatActivity
                     {
 
                     }
+
                 });
+
+                Intent intent = new Intent(WishRequestActivity.this, BulletinBoardActivity.class);
+
+                startActivity(intent);
             }
         });
     }
