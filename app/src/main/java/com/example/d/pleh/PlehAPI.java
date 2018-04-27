@@ -22,5 +22,5 @@ public interface PlehAPI {
     Call<List<Wish>> getWish();
 
     @POST("wish/create")
-    Call<Long> addWish(@Body User user);
+    Call<Long> addWish(@Body Wish wish);
 }

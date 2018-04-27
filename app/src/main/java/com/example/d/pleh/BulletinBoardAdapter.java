@@ -47,7 +47,7 @@ public class BulletinBoardAdapter extends RecyclerView.Adapter<BulletinBoardAdap
         public ViewHolder(View view) {
             super(view);
             wishImageView = view.findViewById(R.id.wish_image);
-            wishDescriptionTextView = view.findViewById(R.id.wish_description);
+            wishDescriptionTextView = view.findViewById(R.id.txtWishDesc);
             offerImageView = view.findViewById(R.id.offer_image);
             offerDescriptionTextView = view.findViewById(R.id.offer_description);
         }
