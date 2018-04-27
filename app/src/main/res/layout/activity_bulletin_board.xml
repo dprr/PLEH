@@ -12,15 +12,15 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:indeterminate="true"
-        android:theme="@style/ProgressTheme"/>
+        android:theme="@style/ProgressTheme"
+        android:visibility="gone"/>
 
     <LinearLayout
         android:id="@+id/wish_list_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:orientation="vertical"
-        android:visibility="gone">
+        android:orientation="vertical">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/wish_list_recycler_view"

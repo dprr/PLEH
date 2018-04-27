@@ -18,7 +18,7 @@ public interface PlehAPI {
     @POST("user/create")
     Call<Long> addUser(@Body User user);
 
-    @GET("wish/all")
+    @GET("wish")
     Call<List<Wish>> getWish();
 
     @POST("wish/create")

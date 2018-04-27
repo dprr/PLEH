@@ -35,35 +35,19 @@ public class BulletinBoardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bulletin_board);
 
-
-
         progressBar = findViewById(R.id.wish_list_progress_bar);
         progressBar.setVisibility(View.GONE); // TODO change this!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
         wishListLayout = findViewById(R.id.wish_list_layout);
         wishListRecyclerView = findViewById(R.id.wish_list_recycler_view);
-        createWishButton = findViewById(R.id.create_wish_btn);
 
         wishListRecyclerView.setHasFixedSize(true);
+        createWishButton = findViewById(R.id.create_wish_btn);
 
         RecyclerView.LayoutManager vetListLayoutManager = new LinearLayoutManager(this);
         wishListRecyclerView.setLayoutManager(vetListLayoutManager);
 
         getWishes();
-
-//        wishList.add(new Wish("Sofa", RewardCategory.DRUGS, "help me", "Yoni", WishCategoryType.ITEMS, 0));
-//        wishList.add(new Wish("Translation", RewardCategory.DRUGS, "help me", "Felber", WishCategoryType.ITEMS, 1));
-//        wishList.add(new Wish("Cart", RewardCategory.DRUGS, "help me", "Shahar", WishCategoryType.ITEMS, 2));
-//        wishList.add(new Wish("Work", RewardCategory.DRUGS, "help me", "Ohad", WishCategoryType.ITEMS, 3));
-//        wishList.add(new Wish("Sofa", RewardCategory.DRUGS, "help me", "Yoni", WishCategoryType.ITEMS, 4));
-//        wishList.add(new Wish("Translation", RewardCategory.DRUGS, "help me", "Felber", WishCategoryType.ITEMS, 5));
-//        wishList.add(new Wish("Cart", RewardCategory.DRUGS, "help me", "Shahar", WishCategoryType.ITEMS, 6));
-//        wishList.add(new Wish("Work", RewardCategory.DRUGS, "help me", "Ohad", WishCategoryType.ITEMS, 7));
-//        wishList.add(new Wish("Sofa", RewardCategory.DRUGS, "help me", "Yoni", WishCategoryType.ITEMS, 8));
-//        wishList.add(new Wish("Translation", RewardCategory.DRUGS, "help me", "Felber", WishCategoryType.ITEMS, 9));
-//        wishList.add(new Wish("Cart", RewardCategory.DRUGS, "help me", "Shahar", WishCategoryType.ITEMS, 11));
-//        wishList.add(new Wish("Work", RewardCategory.DRUGS, "help me", "Ohad", WishCategoryType.ITEMS, 12));
-//        wishListRecyclerView.setAdapter(new BulletinBoardAdapter(wishList, buttonsListener));
     }
 
     public void OnOfferClick(View v) {
@@ -77,6 +61,8 @@ public class BulletinBoardActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Wish>> call, Response<List<Wish>> response) {
                 wishList = response.body();
+                if (wishList == null)
+                    wishList = new ArrayList<>();
                 updateUI();
             }
 
@@ -91,7 +77,7 @@ public class BulletinBoardActivity extends AppCompatActivity {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                final BulletinBoardAdapter.OnItemClickListener buttonsListener = new BulletinBoardAdapter.OnItemClickListener() {
+                final BulletinBoardAdapter.OnItemClickListener bulletsListener = new BulletinBoardAdapter.OnItemClickListener() {
                     @Override
                     public void onItemClick(Wish item) {
 //                        Intent intent = new Intent(BulletinBoardActivity.this, PageWishDescription.class);
@@ -103,6 +89,7 @@ public class BulletinBoardActivity extends AppCompatActivity {
                     }
                 };
 
+                wishListRecyclerView.setAdapter(new BulletinBoardAdapter(wishList, bulletsListener));
                 progressBar.setVisibility(View.GONE);
                 wishListLayout.setVisibility(View.VISIBLE);
             }

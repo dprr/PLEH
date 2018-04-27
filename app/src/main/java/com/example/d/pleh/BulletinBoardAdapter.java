@@ -17,8 +17,8 @@ public class BulletinBoardAdapter extends RecyclerView.Adapter<BulletinBoardAdap
     private List<Wish> bulletinBoardDataset;
     private final OnItemClickListener listener;
 
-    public BulletinBoardAdapter(List<Wish> vetClinicsDataset, OnItemClickListener listener) {
-        this.bulletinBoardDataset = vetClinicsDataset;
+    public BulletinBoardAdapter(List<Wish> bulletinBoardDataset, OnItemClickListener listener) {
+        this.bulletinBoardDataset = bulletinBoardDataset;
         this.listener = listener;
     }
 
@@ -53,9 +53,9 @@ public class BulletinBoardAdapter extends RecyclerView.Adapter<BulletinBoardAdap
         }
 
         public void bind(final Wish item, final OnItemClickListener listener) {
-            wishImageView.setImageResource(Wish.getRewardImage(item.getRewardCategoryType()));
+            wishImageView.setImageResource(Wish.getWishImage(item.getWishCategoryType()));
             wishDescriptionTextView.setText(item.getWishTitle());
-            offerImageView.setImageResource(Wish.getWishImage(item.getWishCategoryType()));
+            offerImageView.setImageResource(Wish.getRewardImage(item.getRewardCategoryType()));
             offerDescriptionTextView.setText(item.getRewardTitle());
 
             itemView.setOnClickListener(new View.OnClickListener() {

@@ -8,9 +8,8 @@ public class Wish {
     private String wishTitle, wishDescription, rewardTitle, rewardDescription/*, author*/;
     private WishCategoryType wishCategoryType;
     private RewardCategoryType rewardCategoryType;
-    private HashSet<Integer> confirmed, applying;
+//    private HashSet<Integer> confirmed, applying;
     private long id, authorId;
-    private ImageView wishImage;
     private WishStatusType wishStatusType;
 
     public Wish(String wishTitle, WishCategoryType wishCategoryType, String wishDescription, String rewardTitle, RewardCategoryType rewardCategoryType,
@@ -23,8 +22,8 @@ public class Wish {
         this.rewardCategoryType = rewardCategoryType;
         this.rewardDescription = rewardDescription;
         this.authorId = authorId;
-        confirmed = new HashSet<>();
-        applying = new HashSet<>();
+//        confirmed = new HashSet<>();
+//        applying = new HashSet<>();
     }
 
     public WishCategoryType getWishCategoryType() {
@@ -67,34 +66,29 @@ public class Wish {
         this.rewardCategoryType = rewardCategoryType;
     }
 
-    public HashSet<Integer> getConfirmed() {
-        return confirmed;
-    }
-
-    public void addConfirmed(int IdConfirmed) {
-        applying.remove(IdConfirmed);
-        confirmed.add(IdConfirmed);
-    }
-
-    public HashSet<Integer> getApplying() {
-        return applying;
-    }
-
-    public void addApplying(int IdApplying) {
-        this.applying.add(IdApplying);
-    }
+//    public HashSet<Integer> getConfirmed() {
+//        return confirmed;
+//    }
+//
+//    public void addConfirmed(int IdConfirmed) {
+//        applying.remove(IdConfirmed);
+//        confirmed.add(IdConfirmed);
+//    }
+//
+//    public HashSet<Integer> getApplying() {
+//        return applying;
+//    }
+//
+//    public void addApplying(int IdApplying) {
+//        this.applying.add(IdApplying);
+//    }
 
     public long getID() { return id;}
 
-    public ImageView getWishImage() {
-        return wishImage;
-    }
-
-    public void setWishImage(ImageView wishImage) {
-        this.wishImage = wishImage;
-    }
-
     public static int getRewardImage(RewardCategoryType reward) {
+        if (reward == null)
+            return R.drawable.cart;
+
         switch (reward) {
             case MONEY:
                 return R.drawable.piggy_bank;
@@ -111,6 +105,9 @@ public class Wish {
     }
 
     public static int getWishImage(WishCategoryType reward) {
+        if (reward == null)
+            return R.drawable.cart;
+
         switch (reward) {
             case ITEMS:
                 return R.drawable.food_and_drink;
