@@ -28,7 +28,7 @@ public class BulletinBoardActivity extends AppCompatActivity {
     private LinearLayout wishListLayout;
     public static RecyclerView wishListRecyclerView;
     private Button createWishButton;
-    public List<Wish> wishList = new ArrayList<>();
+    public static List<Wish> wishList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
