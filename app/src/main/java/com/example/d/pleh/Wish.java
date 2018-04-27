@@ -1,9 +1,5 @@
 package com.example.d.pleh;
 
-import android.widget.ImageView;
-
-import java.util.HashSet;
-
 public class Wish {
     private String wishTitle, wishDescription, rewardTitle, rewardDescription/*, author*/;
     private WishCategoryType wishCategoryType;
@@ -93,10 +89,10 @@ public class Wish {
             case MONEY:
                 return R.drawable.piggy_bank;
 
-            case DRUGS:
+            case SWEETS:
                 return R.drawable.medicine;
 
-            case EVENT:
+            case GENERAL:
                 return R.drawable.network;
 
             case DRINK:
