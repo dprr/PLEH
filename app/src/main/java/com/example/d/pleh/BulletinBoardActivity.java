@@ -30,9 +30,9 @@ public class BulletinBoardActivity extends AppCompatActivity {
 
     private ProgressBar progressBar;
     private LinearLayout wishListLayout;
-    private RecyclerView wishListRecyclerView;
+    public static RecyclerView wishListRecyclerView;
     private Button createWishButton;
-    private List<Wish> wishList = new ArrayList<>();
+    public List<Wish> wishList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
