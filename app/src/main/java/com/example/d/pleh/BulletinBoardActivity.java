@@ -22,7 +22,12 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class BulletinBoardActivity extends AppCompatActivity {
+    public static final String WISH_IMAGE = "com.example.hasorkim.wish_image";
     public static final String REWARD_IMAGE = "com.example.hasorkim.reward_image";
+    public static final String WISH_TITLE = "com.example.hasorkim.wish_title";
+    public static final String REWARD_TITLE = "com.example.hasorkim.reward_title";
+    public static final String WISH_DESCRIPTION = "com.example.hasorkim.wish_description";
+    public static final String REWARD_DESCRIPTION = "com.example.hasorkim.reward_description";
 
     private ProgressBar progressBar;
     private LinearLayout wishListLayout;
@@ -36,8 +41,7 @@ public class BulletinBoardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_bulletin_board);
 
         progressBar = findViewById(R.id.wish_list_progress_bar);
-        progressBar.setVisibility(View.GONE); // TODO change this!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
+        createWishButton = findViewById(R.id.create_wish_btn);
         wishListLayout = findViewById(R.id.wish_list_layout);
         wishListRecyclerView = findViewById(R.id.wish_list_recycler_view);
 
@@ -80,11 +84,13 @@ public class BulletinBoardActivity extends AppCompatActivity {
                 final BulletinBoardAdapter.OnItemClickListener bulletsListener = new BulletinBoardAdapter.OnItemClickListener() {
                     @Override
                     public void onItemClick(Wish item) {
-//                        Intent intent = new Intent(BulletinBoardActivity.this, PageWishDescription.class);
-//                        intent.putExtra(REWARD_IMAGE, Wish.getRewardOffer(item.getRewardCategory()));
-//
-//                        startActivity(intent);
                         Intent intent = new Intent(BulletinBoardActivity.this, PageWishDescription.class);
+                        intent.putExtra(WISH_IMAGE, Wish.getWishImage(item.getWishCategoryType()));
+                        intent.putExtra(REWARD_IMAGE, Wish.getRewardImage(item.getRewardCategoryType()));
+                        intent.putExtra(WISH_TITLE, item.getWishTitle());
+                        intent.putExtra(REWARD_TITLE, item.getRewardTitle());
+                        intent.putExtra(WISH_DESCRIPTION, item.getWishDescription());
+                        intent.putExtra(REWARD_DESCRIPTION, item.getRewardDescription());
                         startActivity(intent);
                     }
                 };
@@ -92,6 +98,9 @@ public class BulletinBoardActivity extends AppCompatActivity {
                 wishListRecyclerView.setAdapter(new BulletinBoardAdapter(wishList, bulletsListener));
                 progressBar.setVisibility(View.GONE);
                 wishListLayout.setVisibility(View.VISIBLE);
+
+                if (wishList.size() == 0)
+                    createWishButton.setVisibility(View.GONE);
             }
         });
     }
