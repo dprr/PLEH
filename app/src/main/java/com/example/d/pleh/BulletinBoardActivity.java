@@ -27,7 +27,6 @@ public class BulletinBoardActivity extends AppCompatActivity {
     public static final String WISH_TITLE = "com.example.hasorkim.wish_title";
     public static final String REWARD_TITLE = "com.example.hasorkim.reward_title";
     public static final String WISH_DESCRIPTION = "com.example.hasorkim.wish_description";
-    public static final String REWARD_DESCRIPTION = "com.example.hasorkim.reward_description";
 
     private ProgressBar progressBar;
     private LinearLayout wishListLayout;
@@ -90,7 +89,6 @@ public class BulletinBoardActivity extends AppCompatActivity {
                         intent.putExtra(WISH_TITLE, item.getWishTitle());
                         intent.putExtra(REWARD_TITLE, item.getRewardTitle());
                         intent.putExtra(WISH_DESCRIPTION, item.getWishDescription());
-                        intent.putExtra(REWARD_DESCRIPTION, item.getRewardDescription());
                         startActivity(intent);
                     }
                 };

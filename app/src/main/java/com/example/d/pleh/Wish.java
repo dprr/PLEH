@@ -97,7 +97,13 @@ public class Wish {
                 return R.drawable.medicine;
 
             case EVENT:
-                return R.drawable.food_and_drink;
+                return R.drawable.network;
+
+            case DRINK:
+                return R.drawable.drink;
+
+            case FOOD:
+                return R.drawable.cookies;
 
             default:
                 return R.drawable.cart;
@@ -114,6 +120,9 @@ public class Wish {
 
             case WORK:
                 return R.drawable.hammer;
+
+            case MEDICINE:
+                return R.drawable.medicine;
 
             case VOLUNTEERS:
                 return R.drawable.network;
