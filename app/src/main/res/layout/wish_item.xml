@@ -5,6 +5,7 @@
     android:layout_height="120dp"
     android:layout_margin="@dimen/wish_margin"
     android:alpha="0.97"
+    android:backgroundTint="@color/light_grey"
     android:background="@drawable/wish_note"
     android:orientation="horizontal"
     android:padding="@dimen/wish_padding">
