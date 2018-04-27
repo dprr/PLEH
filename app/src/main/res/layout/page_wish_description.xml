@@ -61,7 +61,7 @@
                 android:layout_weight="1"
                 android:fontFamily="casual"
                 android:gravity="center_vertical"
-                android:textColor="@color/textColorOnTint" />
+                android:textColor="@android:color/black" />
         </LinearLayout>
 
         <TextView
@@ -109,7 +109,7 @@
                 android:textStyle="bold"
                 android:fontFamily="casual"
                 android:gravity="center_vertical"
-                android:textColor="@color/textColorOnTint" />
+                android:textColor="@android:color/black" />
 
         </LinearLayout>
 
@@ -151,7 +151,7 @@
                 android:layout_weight="1"
                 android:fontFamily="casual"
                 android:gravity="center_vertical"
-                android:textColor="@color/textColorOnTint" />
+                android:textColor="@android:color/black" />
 
         </LinearLayout>
 
@@ -165,6 +165,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="3dp"
         android:layout_marginRight="3dp"
+        android:onClick="OnButtonClick"
         android:text="@string/grantWish"
         android:textStyle="bold" />
 </LinearLayout>
