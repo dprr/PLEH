@@ -1,153 +1,270 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bulletin_bg_img"
-    tools:context="com.example.d.pleh.WishRequestActivity">
+    android:orientation="vertical">
 
-    <ScrollView
-        android:id="@+id/details_scroll_view"
+    <LinearLayout
+        android:id="@+id/containterTint"
+
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/I_offer_button"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="@dimen/horizontal_tint_margin"
-        android:layout_marginRight="@dimen/horizontal_tint_margin"
-        android:layout_marginLeft="@dimen/horizontal_tint_margin"
-        android:paddingRight="@dimen/horizontal_tint_padding"
-        android:paddingLeft="@dimen/horizontal_tint_padding"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/horizontal_tint_margin"
+        android:layout_weight="1"
+        android:alpha="0.7"
         android:background="@drawable/tint"
         android:backgroundTint="@android:color/darker_gray"
-        android:alpha="0.7"
-        android:scrollbars="vertical">
+        android:orientation="vertical">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        <TextView
+            android:id="@+id/txtCreatePlehGetType"
 
-            <LinearLayout
-                android:id="@+id/wish_title_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingStart="3dp"
-                android:paddingBottom="@dimen/wish_report_padding"
-                android:textStyle="bold">
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="12dp"
+            android:layout_weight="0.7"
+            android:fontFamily="casual"
 
-                <TextView
-                    android:id="@+id/txtHelpMeWith"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="casual"
-                    android:text="@string/wish_title"
-                    android:layout_gravity="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="@dimen/wish_title_size"
-                    android:textStyle="bold" />
+            android:text="What type of help do you need?"
+            android:textColor="@color/textColorOnTint"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/wish_title"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="casual"
-                    android:textStyle="bold"
-                    android:paddingTop="10dp"
-                    android:layout_weight="2.1"
-                    android:hint="@string/wish_title_hint"
-                    android:inputType="text"
-                    android:singleLine="true" />
-            </LinearLayout>
+        <LinearLayout
+            android:id="@+id/barBtnWishes"
 
-            <TextView
-                android:id="@+id/wish_description_title"
-                android:layout_width="wrap_content"
-                android:fontFamily="casual"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/wish_title_layout"
-                android:paddingStart="3dp"
-                android:text="@string/wish_description_string"
-                android:textColor="@android:color/black"
-                android:textSize="@dimen/wish_title_size"
-                android:textStyle="bold" />
+            android:layout_width="350dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="13dp"
+            android:layout_weight="1"
+            android:background="@drawable/tint"
+            android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/wish_description"
+            <ImageButton
+                android:id="@+id/iconWork"
 
-                android:layout_width="match_parent"
-                android:fontFamily="casual"
-                android:textStyle="bold"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/wish_description_title"
-                android:hint="@string/wish_description_hint"
-                android:inputType="textImeMultiLine" />
+                android:layout_width="@dimen/icon_default_size"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@drawable/hammer" />
 
-            <LinearLayout
-                android:id="@+id/offer_title_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/wish_description"
-                android:orientation="horizontal"
-                android:paddingStart="3dp"
-                android:paddingBottom="@dimen/wish_report_padding"
-                android:textStyle="bold">
+            <ImageButton
+                android:id="@+id/iconCart"
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/offer_title"
-                    android:layout_gravity="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="@dimen/wish_title_size"
-                    android:textStyle="bold" />
+                android:layout_width="@dimen/icon_default_size"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@drawable/cart" />
 
-                <EditText
-                    android:id="@+id/offer_title"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:paddingTop="10dp"
-                    android:layout_weight="2.1"
-                    android:hint="@string/offer_title_hint"
-                    android:inputType="text"
-                    android:singleLine="true" />
-            </LinearLayout>
+            <ImageButton
+                android:id="@+id/iconMedicine"
+
+                android:layout_width="@dimen/icon_default_size"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@drawable/medicine" />
+
+            <ImageButton
+                android:id="@+id/iconTranslate"
+
+                android:layout_width="@dimen/icon_default_size"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@drawable/translate" />
+
+            <ImageButton
+                android:id="@+id/iconVolunteers"
+
+                android:layout_width="@dimen/icon_default_size"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@drawable/network" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/containerWish"
+
+            android:layout_width="300dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="37dp"
+            android:layout_weight="0.9"
+            android:background="@drawable/tint"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/offer_description_title"
-                android:layout_width="wrap_content"
+                android:id="@+id/txtDescPageTitle"
+
+                android:hint="@string/pleh_page_title_hint"
+                android:layout_width="0dp"
+                android:layout_marginHorizontal="15dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/offer_title_layout"
-                android:paddingStart="3dp"
-                android:text="@string/offer_description_string"
+                android:layout_weight="1"
+
+                android:gravity="center"
+                android:fontFamily="casual"
                 android:textColor="@android:color/black"
-                android:textSize="@dimen/wish_title_size"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtPageDescRewardStory"
+
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="0.8"
+            android:fontFamily="casual"
+            android:text="In return, I’ll gift with.."
+            android:textColor="@color/textColorOnTint"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/barBtnRewards"
+
+            android:layout_width="350dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="13dp"
+            android:layout_weight="1"
+            android:background="@drawable/tint"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/iconPiggyBank"
+
+                android:layout_width="@dimen/icon_default_size"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@drawable/piggy_bank" />
+
+            <ImageButton
+                android:id="@+id/iconitems"
+
+                android:layout_width="@dimen/icon_default_size"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@drawable/cookies" />
+
+            <ImageButton
+                android:id="@+id/iconDrink"
+
+                android:layout_width="@dimen/icon_default_size"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@drawable/drink" />
+
+            <ImageButton
+                android:id="@+id/iconFood"
+
+                android:layout_width="@dimen/icon_default_size"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@drawable/food_and_drink" />
+
+            <ImageButton
+                android:id="@+id/iconCookies"
+
+                android:layout_width="@dimen/icon_default_size"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@drawable/cart" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/containerReward"
+
+            android:layout_width="300dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="37dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight=".70"
+            android:background="@drawable/tint"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtRewardTitle"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="casual"
+                android:gravity="center"
+                android:foregroundGravity="center"
+                android:hint="Click and elaborate how you would show your gratfulness"
+                android:textColor="@android:color/black"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/offer_description"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/offer_description_title"
-                android:hint="@string/offer_description_hint"
-                android:inputType="textImeMultiLine" />
-        </RelativeLayout>
+        </LinearLayout>
 
-    </ScrollView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="12dp"
+            android:layout_weight="0.8"
+            android:fontFamily="casual"
+            android:text="Details"
+            android:textColor="@color/textColorOnTint"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/containerDetails"
+
+            android:layout_width="300dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginLeft="37dp"
+            android:layout_weight="1.6"
+            android:background="@drawable/tint"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/txtDescPageDesc"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="9dp"
+                android:layout_weight="1"
+                android:fontFamily="casual"
+                android:gravity="center_vertical"
+                android:textColor="@color/textColorOnTint"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <Button
-        android:id="@+id/I_offer_button"
+        android:id="@+id/btnGrantWish"
+
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_marginRight="3dp"
-        android:layout_marginLeft="3dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:text="@string/I_offer"
-        android:textStyle="bold"
-        android:textSize="@dimen/I_need_size"/>
-</RelativeLayout>
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:text="@string/grantWish"
+        android:textStyle="bold" />
+</LinearLayout>

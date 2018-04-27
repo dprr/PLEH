@@ -13,7 +13,7 @@
     <dimen name="descPageDescTextPadding">5dp</dimen>
     <dimen name="descPageTitleTextPadding">9dp</dimen>
     <dimen name="wish_report_padding">16dp</dimen>
-    <dimen name="wish_title_size">17sp</dimen>
+    <dimen name="wish_title_size">19sp</dimen>
     <dimen name="horizontal_tint_margin">7dp</dimen>
     <dimen name="horizontal_tint_padding">4dp</dimen>
 </resources>
