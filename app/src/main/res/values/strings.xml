@@ -4,17 +4,13 @@
     <string name="bulletin_activity_vet_list">I need</string>
     <string name="grantWish">I\'ll be your hero!</string>
     <string name="I_offer">PLEH me</string>
-    <string name="wish_title_hint">Enter what you wish for</string>
     <string name="offer_title_hint">Enter what you offer</string>
     <string name="wish_title">Help me with:</string>
     <string name="offer_title">I can offer:</string>
-    <string name="wish_description_string">Wish description:</string>
     <string name="offer_description_string">Offer description:</string>
     <string name="wish_description_hint">Enter more details</string>
     <string name="offer_description_hint">Enter more details</string>
-    <string name="I_offer">What I can Give</string>
     <string name="wish_title_hint">Summarize your request</string>
-    <string name="wish_title">How can we help you? Pick a category:</string>
     <string name="wish_description_string">Wish Description</string>
     <string name="pleh_page_title_hint">Click and tell us more, keep it short, you\'ll have more room later</string>
 </resources>

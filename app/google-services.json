@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1044087532400",
+    "firebase_url": "https://pleh-59e6b.firebaseio.com",
+    "project_id": "pleh-59e6b",
+    "storage_bucket": "pleh-59e6b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1044087532400:android:2efb34f674591236",
+        "android_client_info": {
+          "package_name": "com.example.d.pleh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1044087532400-m3ur3bsmv7evv5qaot277u3e090oriqo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3OLociqKtMxSzxuvnS6LGv9TADcksTZg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

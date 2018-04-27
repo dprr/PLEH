@@ -9,7 +9,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class WishRequestActivity extends AppCompatActivity {
-    private EditText wishTitle = findViewById(R.id.wish_title);
+    private EditText wishTitle = findViewById(R.id.txtDescPageTitle);
     private EditText wishDescription = findViewById(R.id.wish_description);
 
 
