@@ -44,7 +44,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/imgWishCatagory"
+                android:id="@+id/imgWishCat"
 
                 android:layout_width="@dimen/icon_page_description_size"
                 android:layout_height="@dimen/icon_page_description_size"
@@ -52,7 +52,7 @@
                 android:layout_weight="0.25" />
 
             <TextView
-                android:id="@+id/txtWishTitle"
+                android:id="@+id/txtDescPageTitle"
 
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -91,7 +91,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/imgRewardCatagory"
+                android:id="@+id/imgRewardCat"
 
                 android:layout_width="@dimen/icon_page_description_size"
                 android:layout_height="@dimen/icon_page_description_size"
@@ -139,7 +139,7 @@
 
 
             <TextView
-                android:id="@+id/txtDescPageDetails"
+                android:id="@+id/txtDescPageDesc"
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
