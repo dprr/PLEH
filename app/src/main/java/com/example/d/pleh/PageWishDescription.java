@@ -54,7 +54,10 @@ public class PageWishDescription extends AppCompatActivity
                     }
                 }).setNegativeButton("OK", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                // implement
+                Intent intent = new Intent(PageWishDescription.this, BulletinBoardActivity.class);
+
+                startActivity(intent);
+                finish();
             }
         }).create().show();
     }
