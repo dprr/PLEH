@@ -43,8 +43,8 @@ public class WishRequestActivity extends AppCompatActivity
     private ImageButton btnRewFood;
     private ImageButton btnRewGeneralItems;
     private Button btnRequestWish;
-    private WishCategoryType wishCategoryType;
-    private RewardCategoryType rewardCategoryType;
+    private WishCategoryType wishCategoryType = null;
+    private RewardCategoryType rewardCategoryType = null;
     private boolean rewardTitleValid;
 
     @Override
@@ -271,6 +271,16 @@ public class WishRequestActivity extends AppCompatActivity
             Toast.makeText(this, "Please enter a  Wish Title", Toast.LENGTH_SHORT).show();  // Todo replace with Pop up rather than Toast
             return false;
         }
+        else if (!wishCatgoryWasChosen())
+        {
+            Toast.makeText(this, "But what's your wish TYPE???\nHow will we know?!", Toast.LENGTH_SHORT).show();  // Todo replace with Pop up rather than Toast
+            return false;
+        }
+        else if (!rewardCatgoryWasChosen())
+        {
+            Toast.makeText(this, "But what's your reward TYPE???\nYour helper's gotta make a living!", Toast.LENGTH_SHORT).show();  // Todo replace with Pop up rather than Toast
+            return false;
+        }
         else if (rewardTitleIsInvalid())
         {
 
@@ -284,6 +294,15 @@ public class WishRequestActivity extends AppCompatActivity
         }
 
         return true;
+    }
+
+    private boolean rewardCatgoryWasChosen()
+    {
+        return rewardCategoryType != null;
+    }
+    private boolean wishCatgoryWasChosen()
+    {
+        return wishCategoryType != null;
     }
 
     private boolean wishTitleIsInvalid()
